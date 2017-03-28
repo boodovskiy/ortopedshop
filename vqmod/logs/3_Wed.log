@@ -1,0 +1,14 @@
+---------- Date: 2017-02-01 17:18:41 ~ IP : 5.101.159.150 ----------
+REQUEST URI : /dlya-reabilitacii/
+MOD DETAILS:
+   modFile   : /home/m/medmmeqb/ortopedshop.ru/public_html/vqmod/xml/customizepricefilter.xml
+   id        : Customize Price Filter
+   version   : 1.0.0
+   vqmver    : 2.4.1
+   author    : Ranjeet Kumar Singh
+
+File Name    : catalog/view/theme/*/template/product/category.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <br />
+----------------------------------------------------------------------
+
+

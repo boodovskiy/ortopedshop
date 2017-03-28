@@ -1,0 +1,14 @@
+---------- Date: 2016-05-27 16:46:06 ~ IP : 91.229.128.203 ----------
+REQUEST URI : /ortopedicheskie-izdelija-bandazhi/
+MOD DETAILS:
+   modFile   : /home/www/z265645/htdocs/ortopedshop.ru/vqmod/xml/customizepricefilter.xml
+   id        : Customize Price Filter
+   version   : 1.0.0
+   vqmver    : 2.4.1
+   author    : Ranjeet Kumar Singh
+
+File Name    : catalog/view/theme/*/template/product/category.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <br />
+----------------------------------------------------------------------
+
+

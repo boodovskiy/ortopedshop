@@ -1,0 +1,2785 @@
+2016-09-22 19:59:33 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 19:59:54 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 20:00:27 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 20:04:10 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 20:51:50 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OpenCart Shortcodes
+FILE: catalog/controller/information/information.php
+CODE: $data['description']
+LINE: 49
+CODE: $data['description']
+LINE: 284
+FILE: catalog/controller/product/category.php
+CODE: $data['description']
+LINE: 144
+LINE: 149
+CODE: new Pagination()
+LINE: 378
+FILE: catalog/controller/product/manufacturer.php
+CODE: new Pagination()
+LINE: 365
+FILE: catalog/controller/product/search.php
+CODE: new Pagination()
+LINE: 433
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/special.php
+CODE: $this->load->view('module
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 380
+CODE: $product_option_value_data[] = array(
+LINE: 397
+----------------------------------------------------------------
+2016-09-22 20:59:14 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OpenCart Shortcodes
+FILE: catalog/controller/information/information.php
+CODE: $data['description']
+LINE: 49
+CODE: $data['description']
+LINE: 284
+FILE: catalog/controller/product/category.php
+CODE: $data['description']
+LINE: 144
+LINE: 149
+CODE: new Pagination()
+LINE: 378
+FILE: catalog/controller/product/manufacturer.php
+CODE: new Pagination()
+LINE: 365
+FILE: catalog/controller/product/search.php
+CODE: new Pagination()
+LINE: 433
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/special.php
+CODE: $this->load->view('module
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 380
+CODE: $product_option_value_data[] = array(
+LINE: 397
+----------------------------------------------------------------
+2016-09-22 21:04:12 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1389
+CODE: <?php echo $footer; ?>
+LINE: 1551
+FILE: admin/view/template/common/filemanager.tpl
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OpenCart Shortcodes
+FILE: catalog/controller/information/information.php
+CODE: $data['description']
+LINE: 49
+CODE: $data['description']
+LINE: 284
+FILE: catalog/controller/product/category.php
+CODE: $data['description']
+LINE: 144
+LINE: 149
+CODE: new Pagination()
+LINE: 378
+FILE: catalog/controller/product/manufacturer.php
+CODE: new Pagination()
+LINE: 365
+FILE: catalog/controller/product/search.php
+CODE: new Pagination()
+LINE: 433
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/special.php
+CODE: $this->load->view('module
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 380
+CODE: $product_option_value_data[] = array(
+LINE: 397
+----------------------------------------------------------------
+2016-09-22 21:04:46 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: OpenCart Shortcodes
+FILE: catalog/controller/information/information.php
+CODE: $data['description']
+LINE: 49
+CODE: $data['description']
+LINE: 284
+FILE: catalog/controller/product/category.php
+CODE: $data['description']
+LINE: 144
+LINE: 149
+CODE: new Pagination()
+LINE: 378
+FILE: catalog/controller/product/manufacturer.php
+CODE: new Pagination()
+LINE: 365
+FILE: catalog/controller/product/search.php
+CODE: new Pagination()
+LINE: 433
+FILE: catalog/controller/module/bestseller.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/featured.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/latest.php
+CODE: $this->load->view('module
+NOT FOUND!
+FILE: catalog/controller/module/special.php
+CODE: $this->load->view('module
+NOT FOUND!
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 380
+CODE: $product_option_value_data[] = array(
+LINE: 397
+----------------------------------------------------------------
+2016-09-22 21:06:14 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 21:08:01 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 21:08:06 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 21:08:59 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-09-22 21:09:59 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------
+2016-10-04 6:44:29 - MOD: Modification Default
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 39
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 20
+LINE: 59
+LINE: 80
+LINE: 99
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 23
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 25
+LINE: 31
+----------------------------------------------------------------
+MOD: Add files to product
+FILE: admin/model/catalog/product.php
+CODE: $product_id = $this->db->getLastId();
+LINE: 13
+FILE: admin/view/template/catalog/product_form.tpl
+CODE: </form>
+LINE: 955
+CODE: <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
+LINE: 41
+FILE: admin/controller/catalog/product.php
+CODE: public function edit() {
+LINE: 80
+CODE: public function delete() {
+LINE: 145
+CODE: if (isset($this->request->post['product_description'])) {
+LINE: 821
+CODE: $this->response->setOutput($this->load->view('catalog/product_form.tpl', $data));
+LINE: 1435
+FILE: catalog/view/theme/OPCADD008/template/product/product.tpl
+CODE: <h5><strong><?php echo $product_short_description_text; ?></strong></h5>
+NOT FOUND!
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 7
+FILE: catalog/controller/product/product.php
+CODE: if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/product/product.tpl')) {
+LINE: 493
+CODE: $data['content_bottom'] = $this->load->controller('common/content_bottom');
+LINE: 485
+LINE: 575
+FILE: admin/view/template/setting/setting.tpl
+CODE: <li><a href="#tab-google" data-toggle="tab"><?php echo $tab_google; ?></a></li>
+LINE: 45
+CODE: </form>
+LINE: 2125
+FILE: admin/controller/setting/setting.php
+CODE: $this->document->setTitle($this->language->get('heading_title'));
+LINE: 250
+----------------------------------------------------------------
+MOD: CKEditor is back!
+FILE: admin/controller/module/html.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 125
+CODE: <script type="text/javascript">
+LINE: 963
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 997
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 997
+FILE: admin/view/template/catalog/category_form.tpl
+CODE: <script type="text/javascript">
+LINE: 249
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 283
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 283
+FILE: admin/view/template/catalog/information_form.tpl
+CODE: <script type="text/javascript">
+LINE: 218
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 252
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 252
+FILE: admin/view/template/module/html.tpl
+CODE: <script type="text/javascript">
+LINE: 80
+CODE: $('#input-description<?php echo $language['language_id']; ?>').summernote({
+LINE: 114
+CODE: <?php echo $language['language_id']; ?>').summernote(
+LINE: 114
+FILE: admin/view/template/marketing/contact.tpl
+CODE: <script type="text/javascript">
+LINE: 95
+CODE: $('#input-message').summernote({
+LINE: 128
+CODE: #input-message').summernote(
+LINE: 128
+CODE: $('textarea[name=\'message\']').val($('#input-message').code());
+LINE: 236
+FILE: admin/controller/common/filemanager.php
+CODE: $url .= '&thumb=' . $this->request->get['thumb'];
+LINE: 82
+LINE: 185
+LINE: 211
+LINE: 240
+CODE: $data['thumb'] = $this->request->get['thumb'];
+LINE: 162
+FILE: admin/view/template/common/filemanager.tpl
+CODE: window.getSelection().getRangeAt(0)
+LINE: 75
+CODE: $('#modal-image').load(url);
+LINE: 165
+----------------------------------------------------------------
+MOD: Export/Import Tool (V2.30) for OpenCart 2.x
+FILE: admin/controller/common/menu.php
+CODE: $data['text_backup'] = $this->language->get('text_backup');
+LINE: 13
+CODE: $data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'],
+LINE: 124
+FILE: admin/language/english/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/language/russian/common/menu.php
+CODE: $_['text_backup']
+LINE: 10
+FILE: admin/view/template/common/menu.tpl
+CODE: <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
+LINE: 160
+----------------------------------------------------------------
+MOD: Fast Multi Upload Images OpenCart 2.0
+CODE: <div class="tab-pane" id="tab-image">
+LINE: 856
+CODE: html  = '<tr id="image-row' + image_row + '">';
+LINE: 1419
+CODE: <?php echo $footer; ?>
+LINE: 1581
+CODE: $('#<?php echo $target; ?>').attr('value', $(this).parent().find('input').attr('value'));
+LINE: 59
+FILE: admin/view/template/common/header.tpl
+CODE: <?php foreach ($links as $link) { ?>
+LINE: 38
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/product/product.tpl
+CODE: <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+LINE: 30
+----------------------------------------------------------------
+MOD: Local copy OCMOD by iSenseLabs
+FILE: admin/controller/extension/installer.php
+CODE: 'url'  => str_replace('&amp;', '&', $this->url->link('extension/installer/ftp', 'token=' . $this->session->data['token'],
+LINE: 132
+CODE: public function unzip() {
+LINE: 293
+----------------------------------------------------------------
+MOD: Y.CMS
+FILE: admin/model/sale/order.php
+CODE: $sql = "SELECT o.order_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS order_status, o.shipping_code, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified FROM `" . DB_PREFIX . "order` o";
+NOT FOUND!
+CODE: $sql = "SELECT o.order_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status, o.shipping_code, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified FROM `" . DB_PREFIX . "order` o";
+LINE: 159
+FILE: admin/language/english/sale/order.php
+CODE: $_['text_add']                   = 'Add Order';
+LINE: 6
+FILE: admin/language/russian/sale/order.php
+CODE: $_['text_add']                   = 'Add Order';
+NOT FOUND!
+FILE: system/library/mail.php
+CODE: basename(urlencode($attachment))
+LINE: 149
+LINE: 150
+FILE: admin/controller/sale/order.php
+CODE: 'view'          => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, true),
+NOT FOUND!
+CODE: $data['button_add'] = $this->language->get('button_add');
+LINE: 202
+FILE: admin/view/template/sale/order_list.tpl
+CODE: <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a></div>
+LINE: 7
+CODE: <td class="text-right"><a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a> <a href="<?php echo $order['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+NOT FOUND!
+FILE: catalog/controller/common/footer.php
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+LINE: 45
+CODE: $data['newsletter'] = $this->url->link('account/newsletter', '', true);
+NOT FOUND!
+FILE: catalog/controller/checkout/success.php
+CODE: if (isset($this->session->data['order_id'])) {
+LINE: 5
+FILE: catalog/view/theme/default/template/common/success.tpl
+CODE: <?php echo $footer; ?>
+LINE: 24
+FILE: catalog/view/theme/OPCADD008/template/common/cart.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/currency.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/footer.tpl
+CODE: <footer>
+LINE: 2
+FILE: catalog/view/theme/OPCADD008/template/common/footerbottom.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/footerleft.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/footerright.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/footertop.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/header.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/headertop.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/language.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/OPCADD008/template/common/search.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/buttons.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/cart.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/column_left.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/column_right.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/content_bottom.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/content_top.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/currency.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/footer.tpl
+CODE: <footer>
+LINE: 0
+FILE: catalog/view/theme/default/template/common/header.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/home.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/language.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/maintenance.tpl
+CODE: <footer>
+NOT FOUND!
+FILE: catalog/view/theme/default/template/common/search.tpl
+CODE: <footer>
+NOT FOUND!
+CODE: <footer>
+NOT FOUND!
+FILE: admin/view/template/sale/order_info.tpl
+CODE: $('.alert').remove();
+LINE: 363
+LINE: 393
+LINE: 423
+LINE: 453
+LINE: 483
+LINE: 511
+LINE: 545
+LINE: 592
+CODE: $('#button-history').on('click', function() {
+LINE: 576
+----------------------------------------------------------------
+MOD: Обновление цены при выборе опций OC2 (без AJAX)
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 101
+LINE: 118
+LINE: 137
+LINE: 156
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 103
+LINE: 121
+LINE: 140
+LINE: 159
+CODE: <?php echo $footer; ?>
+LINE: 999
+CODE: value="<?php echo $option_value['product_option_value_id']; ?>"
+LINE: 177
+LINE: 193
+LINE: 211
+LINE: 229
+CODE: (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
+LINE: 179
+LINE: 196
+LINE: 214
+LINE: 232
+CODE: <?php echo $footer; ?>
+LINE: 875
+FILE: catalog/model/catalog/product.php
+CODE: 'weight'                  => $product_option_value['weight'],
+LINE: 347
+CODE: $data['options'] = array();
+LINE: 377
+CODE: $product_option_value_data[] = array(
+LINE: 394
+----------------------------------------------------------------

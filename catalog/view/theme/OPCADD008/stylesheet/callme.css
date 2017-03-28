@@ -1,0 +1,9 @@
+
+
+
+
+
+#callme_modal .modal-dialog {width:340px;}
+#callme_modal .modal-body {padding:0;}
+#callme_modal .modal-content {border:none; background:none;}
+#callme_modal iframe {border-radius:6px; background:#ddd;}
